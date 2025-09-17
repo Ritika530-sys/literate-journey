@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPU Scheduling Simulator</title>
+
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Load your JS file (defer so it runs after HTML loads) -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1>CPU Scheduling Simulator</h1>
+  </header>
+
+  <main>
+    <!-- Input form for processes -->
+    <section class="input-section">
+      <h2>Add Process</h2>
+      <form id="processForm">
+        <label for="pid">Process ID:</label>
+        <input type="text" id="pid" required>
+
+        <label for="arrival">Arrival Time:</label>
+        <input type="number" id="arrival" required>
+
+        <label for="burst">Burst Time:</label>
+        <input type="number" id="burst" required>
+
+        <button type="submit">Add Process</button>
+      </form>
+    </section>
+
+    <!-- Algorithm selection -->
+    <section class="algorithm-section">
+      <h2>Select Algorithm</h2>
+      <select id="algorithm">
+        <option value="fcfs">First Come First Serve (FCFS)</option>
+        <option value="sjf">Shortest Job First (SJF)</option>
+        <option value="rr">Round Robin (RR)</option>
+      </select>
+      <label for="quantum" id="quantumLabel" style="display:none;">
+        Quantum Time (for RR):
+      </label>
+      <input type="number" id="quantum" style="display:none;">
+      <button id="runBtn">Run Simulation</button>
+    </section>
+
+    <!-- Display results -->
+    <section class="results-section">
+      <h2>Results</h2>
+      <table id="resultsTable">
+        <thead>
+          <tr>
+            <th>Process ID</th>
+            <th>Arrival Time</th>
+            <th>Burst Time</th>
+            <th>Completion Time</th>
+            <th>Turnaround Time</th>
+            <th>Waiting Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Results will be injected here by JavaScript -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>CPU Scheduling Simulator &copy; 2025</p>
+  </footer>
+
+</body>
+</html>
